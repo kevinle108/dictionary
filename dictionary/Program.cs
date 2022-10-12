@@ -1,6 +1,13 @@
 ﻿
 using System.Text.Json;
 
+void SayHello()
+{
+
+}
+
+
+
 Console.WriteLine("Hello, World!");
 
 var incomingList = new List<Word>();
@@ -18,7 +25,6 @@ using (var client = new HttpClient())
     Console.WriteLine();
     List<Meaning> meanings = incomingList[0].meanings;
 
-
     int n = 1;
     foreach (var meaning in meanings)
     {
@@ -31,7 +37,6 @@ using (var client = new HttpClient())
         }
         Console.WriteLine();
         n++;
-
     }
 }
 
@@ -40,6 +45,7 @@ public record struct Word
     string word,
     List<Meaning> meanings,
     List<string> sourceUrls
+
 );
 
 public record struct Meaning
@@ -52,6 +58,8 @@ public record struct Definition
 (
     string definition
 );
+
+
 
 //public record struct Word(
 //    public string word,
